@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { MotionProvider } from "@/components/layout/motion-provider";
+import { SocialDock } from "@/components/layout/social-dock";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={spaceGrotesk.variable}>
       <body>
         <MotionProvider>{children}</MotionProvider>
+        <SocialDock />
       </body>
     </html>
   );

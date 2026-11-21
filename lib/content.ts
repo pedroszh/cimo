@@ -25,9 +25,9 @@ export const site = {
   },
   /** Redes sociais — preencha o href quando os perfis forem confirmados. Itens sem href não aparecem. */
   social: [
-    { label: "Instagram", href: "" },
-    { label: "TikTok", href: "" },
-  ],
+    { id: "instagram", label: "Instagram", href: "https://www.instagram.com/cimo_ofical" },
+    { id: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@cimo_oficial" },
+  ] as { id: "instagram" | "tiktok"; label: string; href: string }[],
   legal: [
     { label: "Termos de uso", href: "/termos" },
     { label: "Política de privacidade", href: "/privacidade" },
