@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CIMO — Design tokens (identidade oficial)
+   Azul-marinho #0D1B2A · Creme #F4F1EA · Âmbar #F2A541 · Âmbar escuro #D9821E
+   Todo o site (Tailwind + SVGs) deriva destas variáveis.
+   ========================================================================== */
+:root {
+  --cimo-bg: #0d1b2a; /* azul-marinho — fundo principal */
+  --cimo-bg-2: #102236;
+  --cimo-surface: #142840; /* cartões, como no app */
+  --cimo-surface-2: #1a3250;
+  --cimo-accent: #f2a541; /* âmbar — destaque e botões */
+  --cimo-accent-soft: #f5b866; /* âmbar claro para traços/texto sobre o marinho */
+  --cimo-accent-strong: #d9821e; /* âmbar escuro — destaque sobre fundo claro */
+  --cimo-signal: #4fd18b; /* verde do app — valores positivos */
+  --cimo-cream: #f4f1ea; /* creme — fundo claro */
+  --cimo-navy: #0d1b2a;
+  --cimo-fg: #f4f1ea;
+  --cimo-muted: #cdd5df; /* texto secundário com contraste alto */
+  --cimo-subtle: #a3b1c2;
+  --cimo-line: rgb(244 241 234 / 0.1);
+  --cimo-line-strong: rgb(244 241 234 / 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--cimo-bg);
+  --color-bg-2: var(--cimo-bg-2);
+  --color-surface: var(--cimo-surface);
+  --color-surface-2: var(--cimo-surface-2);
+  --color-accent: var(--cimo-accent);
+  --color-accent-soft: var(--cimo-accent-soft);
+  --color-accent-strong: var(--cimo-accent-strong);
+  --color-signal: var(--cimo-signal);
+  --color-cream: var(--cimo-cream);
+  --color-navy: var(--cimo-navy);
+  --color-fg: var(--cimo-fg);
+  --color-muted: var(--cimo-muted);
+  --color-subtle: var(--cimo-subtle);
+  --color-line: var(--cimo-line);
+  --color-line-strong: var(--cimo-line-strong);
+
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme {
+  --breakpoint-xs: 26rem;
+  --animate-pulse-dot: pulse-dot 2.4s ease-out infinite;
+  --animate-dash: dash 2.6s linear infinite;
+
+  @keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--cimo-signal) 60%, transparent); }
+    70%, 100% { box-shadow: 0 0 0 8px transparent; }
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -40; }
+  }
+}
+
+@layer base {
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--cimo-bg);
+    color: var(--cimo-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--cimo-accent);
+    color: var(--cimo-navy);
+  }
+  :focus-visible {
+    outline: 2px solid var(--cimo-accent-soft);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Contêiner padrão das seções */
+  .container-x {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 2rem; }
+  }
+
+  /* Superfície "vidro" usada em cards e janelas de software */
+  .glass {
+    background: linear-gradient(180deg, color-mix(in oklab, var(--cimo-surface) 88%, transparent), color-mix(in oklab, var(--cimo-bg-2) 92%, transparent));
+    border: 1px solid var(--cimo-line);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.05),
+      0 30px 80px -40px rgb(0 0 0 / 0.8);
+  }
+
+  /* Borda com brilho sutil no topo */
+  .hairline-top {
+    position: relative;
+  }
+  .hairline-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--cimo-accent-soft) 60%, transparent), transparent);
+    opacity: 0.7;
+  }
+
+  /* Grade técnica de fundo */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--cimo-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--cimo-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Seções claras (creme) */
+  .surface-cream {
+    background: var(--cimo-cream);
+    color: var(--cimo-navy);
+  }
+
+  .text-gradient {
+    background: linear-gradient(180deg, var(--cimo-fg) 30%, color-mix(in oklab, var(--cimo-fg) 78%, var(--cimo-bg)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
