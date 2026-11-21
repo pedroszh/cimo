@@ -7,7 +7,7 @@
 
 
 /** Endereço do app. Os botões "Criar conta" e "Entrar" levam para cá. */
-export const APP_URL = "https://vertice.cimo.tech.br";
+export const APP_URL = "https://vertice.cimo.tec.br";
 
 export const links = {
   createAccount: APP_URL,
@@ -21,7 +21,7 @@ export const site = {
   description:
     "Vértice, da CIMO: o dinheiro da casa e do carro no mesmo lugar. Para motoristas de aplicativo e pessoa física saberem quanto sobra no fim do dia.",
   contact: {
-    email: "contato@cimo.tech.br",
+    email: "contato@cimo.tec.br",
   },
   /** Redes sociais — preencha o href quando os perfis forem confirmados. Itens sem href não aparecem. */
   social: [
@@ -60,7 +60,7 @@ export const productShot = {
   title: "Complexidade entra.",
   titleAccent: "Clareza sai.",
   lead: "Uma tela, as respostas que importam. Sem planilha e sem jargão.",
-  image: "/app/cenas/caminhao.webp",
+  image: "/app/cenas/cidade.webp",
   alt: "Vértice no computador e no celular: ganhos de hoje, meta do dia e indicadores do veículo",
 };
 

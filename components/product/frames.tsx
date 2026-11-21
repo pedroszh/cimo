@@ -36,7 +36,7 @@ export function BrowserFrame({
   alt,
   className,
   priority,
-  url = "vertice.cimo.tech.br",
+  url = "vertice.cimo.tec.br",
   sizes = "(max-width: 1024px) 100vw, 1100px",
 }: {
   sizes?: string;

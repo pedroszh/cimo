@@ -55,7 +55,7 @@ export function Footer() {
       <div className="container-x flex flex-col gap-2 border-t border-line py-6 text-sm text-subtle sm:flex-row sm:items-center sm:justify-between">
         <span>© {year} {site.name}. Todos os direitos reservados.</span>
         <span>
-          {site.product} by {site.name} · cimo.tech.br
+          {site.product} by {site.name} · cimo.tec.br
         </span>
       </div>
 

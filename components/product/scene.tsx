@@ -25,7 +25,7 @@ export function Scene({
   sizes = "(max-width: 768px) 100vw, 1200px",
 }: {
   sizes?: string;
-  /** object-position da foto (ex.: "20% center" para manter o caminhão à vista no celular) */
+  /** object-position da foto (ex.: "28% center" para manter o assunto da foto à vista no celular) */
   focus?: string;
   src: string;
   alt: string;

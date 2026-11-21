@@ -8,7 +8,7 @@ import { EASE, Reveal } from "@/components/ui/primitives";
 import { productShot } from "@/lib/content";
 
 /**
- * Cena do caminhão (Paper) ocupando a largura inteira da página e a altura da tela,
+ * Cena da cidade em movimento (Paper) ocupando a largura inteira da página e a altura da tela,
  * com a frase da marca por cima e o app no computador e no celular.
  */
 export function ProductShot() {
@@ -17,9 +17,9 @@ export function ProductShot() {
   return (
     <section aria-label={`${productShot.title} ${productShot.titleAccent}`} className="relative">
       <Scene
-        src="/app/cenas/caminhao.webp"
-        alt="Caminhão na estrada à noite"
-        focus="18% center"
+        src="/app/cenas/cidade.webp"
+        alt="Avenida da cidade à noite com rastros de luz dos faróis"
+        focus="28% center"
         sizes="100vw"
         orbits={["M-40 600 C 220 300, 720 220, 1240 150", "M-40 760 C 380 560, 900 520, 1240 600"]}
         className="h-[100svh] min-h-[640px] w-full md:min-h-[720px]"
